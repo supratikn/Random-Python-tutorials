@@ -1,0 +1,40 @@
+import heapq
+from collections import Counter
+grades =[32, 43, 654, 34 , 132, 66, 99, 532]
+
+print(heapq.nlargest(3, grades))
+
+stocks = {
+    'GOOG' : 434,
+    'AAPL' : 325,
+    'FB' : 54,
+    'AMZN' : 623,
+    'F' : 32,
+    'MSFT' : 549,
+
+
+}
+
+minPrice = min(zip(stocks.values(),stocks.keys()))
+print(minPrice)
+
+text = "Justice League is an upcoming American superhero film based on the DC Comics superhero team of the same name, distributed by Warner Bros. Pictures. " \
+       "It is intended to be the fifth installment in the DC Extended Universe. The film is directed by Zack Snyder, with a screenplay by Chris Terrio, from a story by Snyder and Terrio,[1] and features an ensemble cast that includes Ben Affleck, Henry Cavill, Gal Gadot, Jason Momoa, Ezra Miller, Ray Fisher, Ciarán Hinds, Amy Adams, Willem Dafoe, Jesse Eisenberg, Jeremy Irons, Diane Lane, Connie Nielsen, and J. K. Simmons. In Justice League, Batman and Wonder Woman assemble a team consisting of Flash, Aquaman, and Cyborg to face the catastrophic threat of Steppenwolf and his army of Parademons."\
+       "The film was announced in October 2014 with Snyder on board to direct and Terrio attached to write the script. Principal photography commenced in April 2016 and ended in October 2016. Snyder left the project in May 2017, following the death of his daughter; Joss Whedon was brought on to work on additional scenes and the post-production process. Justice League is scheduled to be released on November 17, 2017, in 2D, 3D, and IMAX 3D."
+
+words = text.split()
+counter = Counter(words)
+
+print(counter.most_common(3))
+
+from operator import itemgetter
+
+users = [
+{'fname': 'Ashmin', 'lname': 'Kharel'},
+{'fname': 'Erika', 'lname': 'Perfect'},
+{'fname': 'Rebecca', 'lname': 'Cutie'},
+{'fname': 'Emma', 'lname': 'Whore'},
+]
+
+for x in sorted(users, key =itemgetter('fname','lname')):
+    print(x)
